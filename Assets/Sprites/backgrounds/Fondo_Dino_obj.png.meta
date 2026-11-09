@@ -1,0 +1,925 @@
+fileFormatVersion: 2
+guid: 1116002652ac04349aeca049f5fd566b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4074258969061169445
+    second: Fondo_Dino_obj_0
+  - first:
+      213: 6957536742768400743
+    second: Fondo_Dino_obj_1
+  - first:
+      213: -2858732701191987253
+    second: Fondo_Dino_obj_2
+  - first:
+      213: 3843659474251658158
+    second: Fondo_Dino_obj_3
+  - first:
+      213: 2929195215805887569
+    second: Fondo_Dino_obj_4
+  - first:
+      213: -3063439281230156301
+    second: Fondo_Dino_obj_5
+  - first:
+      213: 4727758474992816102
+    second: Fondo_Dino_obj_6
+  - first:
+      213: -2976000950303566690
+    second: Fondo_Dino_obj_7
+  - first:
+      213: 925500898590409218
+    second: Fondo_Dino_obj_8
+  - first:
+      213: -72644080699565379
+    second: Fondo_Dino_obj_9
+  - first:
+      213: -8530065589428405140
+    second: Fondo_Dino_obj_10
+  - first:
+      213: 4820691883317378885
+    second: Fondo_Dino_obj_11
+  - first:
+      213: 7564109427779030437
+    second: Fondo_Dino_obj_12
+  - first:
+      213: 8710614589610689994
+    second: Fondo_Dino_obj_13
+  - first:
+      213: -9105505377922723145
+    second: Fondo_Dino_obj_14
+  - first:
+      213: -694074409782606865
+    second: Fondo_Dino_obj_15
+  - first:
+      213: 2331957228972209126
+    second: Fondo_Dino_obj_16
+  - first:
+      213: 521457056108573699
+    second: Fondo_Dino_obj_17
+  - first:
+      213: -2822574701734713972
+    second: Fondo_Dino_obj_18
+  - first:
+      213: -6322763758372281002
+    second: Fondo_Dino_obj_19
+  - first:
+      213: 5552170560748801777
+    second: Fondo_Dino_obj_20
+  - first:
+      213: -5392135727191317758
+    second: Fondo_Dino_obj_21
+  - first:
+      213: 2828707714807152012
+    second: Fondo_Dino_obj_22
+  - first:
+      213: -6503782858977302816
+    second: Fondo_Dino_obj_23
+  - first:
+      213: -8990295008017990014
+    second: Fondo_Dino_obj_24
+  - first:
+      213: -6245927789619960862
+    second: Fondo_Dino_obj_25
+  - first:
+      213: 8368417276460723032
+    second: Fondo_Dino_obj_26
+  - first:
+      213: 5626247086809639682
+    second: Fondo_Dino_obj_27
+  - first:
+      213: -3692756866793253079
+    second: Fondo_Dino_obj_28
+  - first:
+      213: -7585700878198598824
+    second: Fondo_Dino_obj_29
+  - first:
+      213: 150065785283153455
+    second: Fondo_Dino_obj_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 149
+        width: 108
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52917dd22fcaa8830800000000000000
+      internalID: 4074258969061169445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 43
+        width: 17
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76950701ec22e8060800000000000000
+      internalID: 6957536742768400743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 161
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf98a521cdb358d0800000000000000
+      internalID: -2858732701191987253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 115
+        width: 106
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3b5506deb675530800000000000000
+      internalID: 3843659474251658158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 142
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15432eb778796a820800000000000000
+      internalID: 2929195215805887569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 98
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd6c4b543a7c75d0800000000000000
+      internalID: -3063439281230156301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_6
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 110
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef0ac5c84f5c9140800000000000000
+      internalID: 4727758474992816102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_7
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 98
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e945ee937ee13b6d0800000000000000
+      internalID: -2976000950303566690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 97
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20249cbe92a08dc00800000000000000
+      internalID: 925500898590409218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 97
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba1edee79aedfef0800000000000000
+      internalID: -72644080699565379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 100
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c36576a8e1f9980800000000000000
+      internalID: -8530065589428405140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_11
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54fbdbc0ab986e240800000000000000
+      internalID: 4820691883317378885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_12
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5adc3fcb27d19f860800000000000000
+      internalID: 7564109427779030437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 83
+        width: 43
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5841581d152e870800000000000000
+      internalID: 8710614589610689994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 83
+        width: 52
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2d1801a1fb2a180800000000000000
+      internalID: -9105505377922723145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_15
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 90
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3083d60072e56f0800000000000000
+      internalID: -694074409782606865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_16
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 75
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e3fa489eb6cc5020800000000000000
+      internalID: 2331957228972209126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 75
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304f8f20e669c3700800000000000000
+      internalID: 521457056108573699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_18
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 77
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85291f634334d8d0800000000000000
+      internalID: -2822574701734713972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_19
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 77
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655a1877cd70148a0800000000000000
+      internalID: -6322763758372281002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_20
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 64
+        width: 113
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe40d555b54d0d40800000000000000
+      internalID: 5552170560748801777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_21
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203a118ff194b25b0800000000000000
+      internalID: -5392135727191317758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_22
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8dbc72fda6914720800000000000000
+      internalID: 2828707714807152012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_23
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 67
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e62262c2fbedb5a0800000000000000
+      internalID: -6503782858977302816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_24
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 67
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ebe15a25e0c3380800000000000000
+      internalID: -8990295008017990014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_25
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 48
+        width: 60
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e326f684c10259a0800000000000000
+      internalID: -6245927789619960862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_26
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 45
+        width: 36
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85beea7dc27922470800000000000000
+      internalID: 8368417276460723032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_27
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 12
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b6dd39ae1741e40800000000000000
+      internalID: 5626247086809639682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_28
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 7
+        width: 92
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92757e8d131b0ccc0800000000000000
+      internalID: -3692756866793253079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_29
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 12
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8539a96fd3d2ab690800000000000000
+      internalID: -7585700878198598824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Dino_obj_30
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 12
+        width: 86
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e0eb06904251200800000000000000
+      internalID: 150065785283153455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 51c87bf16dad88342be061f4c7f4446f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Fondo_Dino_obj_0: 4074258969061169445
+      Fondo_Dino_obj_1: 6957536742768400743
+      Fondo_Dino_obj_10: -8530065589428405140
+      Fondo_Dino_obj_11: 4820691883317378885
+      Fondo_Dino_obj_12: 7564109427779030437
+      Fondo_Dino_obj_13: 8710614589610689994
+      Fondo_Dino_obj_14: -9105505377922723145
+      Fondo_Dino_obj_15: -694074409782606865
+      Fondo_Dino_obj_16: 2331957228972209126
+      Fondo_Dino_obj_17: 521457056108573699
+      Fondo_Dino_obj_18: -2822574701734713972
+      Fondo_Dino_obj_19: -6322763758372281002
+      Fondo_Dino_obj_2: -2858732701191987253
+      Fondo_Dino_obj_20: 5552170560748801777
+      Fondo_Dino_obj_21: -5392135727191317758
+      Fondo_Dino_obj_22: 2828707714807152012
+      Fondo_Dino_obj_23: -6503782858977302816
+      Fondo_Dino_obj_24: -8990295008017990014
+      Fondo_Dino_obj_25: -6245927789619960862
+      Fondo_Dino_obj_26: 8368417276460723032
+      Fondo_Dino_obj_27: 5626247086809639682
+      Fondo_Dino_obj_28: -3692756866793253079
+      Fondo_Dino_obj_29: -7585700878198598824
+      Fondo_Dino_obj_3: 3843659474251658158
+      Fondo_Dino_obj_30: 150065785283153455
+      Fondo_Dino_obj_4: 2929195215805887569
+      Fondo_Dino_obj_5: -3063439281230156301
+      Fondo_Dino_obj_6: 4727758474992816102
+      Fondo_Dino_obj_7: -2976000950303566690
+      Fondo_Dino_obj_8: 925500898590409218
+      Fondo_Dino_obj_9: -72644080699565379
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
