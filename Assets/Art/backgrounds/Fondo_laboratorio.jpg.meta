@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ba65791b508fb3b46a173bdb9580a1c0
+guid: 1325ab9e4dd4a7a4dab9f4386c2b526c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4171314711523277499
-    second: Fondo_Dino_1_0
+      213: 4930545130651140529
+    second: Fondo_laboratorio_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 4
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 22.5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo_Dino_1_0
+      name: Fondo_laboratorio_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5454b45de538c16c0800000000000000
-      internalID: -4171314711523277499
+      spriteID: 1b14e755ca0dc6440800000000000000
+      internalID: 4930545130651140529
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo_Dino_1_0: -4171314711523277499
+      Fondo_laboratorio_0: 4930545130651140529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
