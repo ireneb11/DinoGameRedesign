@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: fe62ef4fcf40ad84d838be33fb865686
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7716975173187922440
+    second: Assets_fondo_0
+  - first:
+      213: 3046853121816372015
+    second: Assets_fondo_1
+  - first:
+      213: -1182653945356305315
+    second: Assets_fondo_2
+  - first:
+      213: -171421196093328079
+    second: Assets_fondo_3
+  - first:
+      213: -4547716618362472083
+    second: Assets_fondo_4
+  - first:
+      213: -3864311753198176811
+    second: Assets_fondo_5
+  - first:
+      213: 5546896298197371747
+    second: Assets_fondo_6
+  - first:
+      213: 8597119254529754705
+    second: Assets_fondo_7
+  - first:
+      213: -8336997319081295688
+    second: Assets_fondo_8
+  - first:
+      213: 8295801517485929003
+    second: Assets_fondo_9
+  - first:
+      213: -9156197263911337219
+    second: Assets_fondo_10
+  - first:
+      213: 2328333986334722140
+    second: Assets_fondo_11
+  - first:
+      213: 8918975695018680789
+    second: Assets_fondo_12
+  - first:
+      213: 7223750677022458586
+    second: Assets_fondo_13
+  - first:
+      213: 6665952755750290807
+    second: Assets_fondo_14
+  - first:
+      213: 8026057986931579282
+    second: Assets_fondo_15
+  - first:
+      213: 8063653529641876832
+    second: Assets_fondo_16
+  - first:
+      213: -1741138899254904220
+    second: Assets_fondo_17
+  - first:
+      213: -7104306308959721874
+    second: Assets_fondo_18
+  - first:
+      213: -8240005536453102630
+    second: Assets_fondo_19
+  - first:
+      213: 5676712969844839904
+    second: Assets_fondo_20
+  - first:
+      213: 3987146242627112146
+    second: Assets_fondo_21
+  - first:
+      213: 6882955710226672995
+    second: Assets_fondo_22
+  - first:
+      213: 6451537254211856574
+    second: Assets_fondo_23
+  - first:
+      213: -6420886368251453704
+    second: Assets_fondo_24
+  - first:
+      213: 2266561365273193772
+    second: Assets_fondo_25
+  - first:
+      213: 3718710763212027687
+    second: Assets_fondo_26
+  - first:
+      213: -8969054643725480304
+    second: Assets_fondo_27
+  - first:
+      213: -2380805966674451844
+    second: Assets_fondo_28
+  - first:
+      213: -3421669229522680761
+    second: Assets_fondo_29
+  - first:
+      213: -7369602240670236648
+    second: Assets_fondo_30
+  - first:
+      213: -4378824265902445002
+    second: Assets_fondo_31
+  - first:
+      213: 2074088865975887679
+    second: Assets_fondo_32
+  - first:
+      213: -4461408730008893475
+    second: Assets_fondo_33
+  - first:
+      213: 8663080955220521761
+    second: Assets_fondo_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 22.5
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Assets_fondo_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 148
+        width: 109
+        height: 29
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80aef52a804381b60800000000000000
+      internalID: 7716975173187922440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 42
+        width: 19
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23a7a875c8984a20800000000000000
+      internalID: 3046853121816372015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 160
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cb2dea08e569fe0800000000000000
+      internalID: -1182653945356305315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 125
+        width: 113
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13572e3945dfe9df0800000000000000
+      internalID: -171421196093328079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_4
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 114
+        width: 110
+        height: 30
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d693d5794d343e0c0800000000000000
+      internalID: -4547716618362472083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 141
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d571493fe43f5ac0800000000000000
+      internalID: -3864311753198176811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_6
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 121
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36bcbf36bc88afc40800000000000000
+      internalID: 5546896298197371747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 96
+        width: 38
+        height: 13
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156cae9996a1f4770800000000000000
+      internalID: 8597119254529754705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 96
+        width: 36
+        height: 13
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b086ce0c190d4c80800000000000000
+      internalID: -8336997319081295688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_9
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 102
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2235e0f68b902370800000000000000
+      internalID: 8295801517485929003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_10
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 95
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2492f9917aee080800000000000000
+      internalID: -9156197263911337219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 107
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5843fdac67ef4020800000000000000
+      internalID: 2328333986334722140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_12
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 97
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d16eedc32196cb70800000000000000
+      internalID: 8918975695018680789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_13
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 95
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad249e9b7faef3460800000000000000
+      internalID: 7223750677022458586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_14
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 96
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7754800b6b8328c50800000000000000
+      internalID: 6665952755750290807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 96
+        width: 11
+        height: 11
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2995eb91739426f60800000000000000
+      internalID: 8026057986931579282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 82
+        width: 45
+        height: 13
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06df022892ad7ef60800000000000000
+      internalID: 8063653529641876832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 82
+        width: 54
+        height: 13
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46afb45656b36d7e0800000000000000
+      internalID: -1741138899254904220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_18
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 87
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66a3ee5d0f686d90800000000000000
+      internalID: -7104306308959721874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_19
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 63
+        width: 115
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3f57c3f9e95ad80800000000000000
+      internalID: -8240005536453102630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_20
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 61
+        width: 38
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5547b9e5cb7ce40800000000000000
+      internalID: 5676712969844839904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_21
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 72
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc82530260355730800000000000000
+      internalID: 3987146242627112146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_22
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 72
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36daec040cb258f50800000000000000
+      internalID: 6882955710226672995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 74
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb82f7473f6788950800000000000000
+      internalID: 6451537254211856574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_24
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 64
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe593d0edd64e6a0800000000000000
+      internalID: -6420886368251453704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_25
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 74
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2dabbe8d81747f10800000000000000
+      internalID: 2266561365273193772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_26
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 64
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727bcaf8cb38b9330800000000000000
+      internalID: 3718710763212027687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_27
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 62
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ecca55254878380800000000000000
+      internalID: -8969054643725480304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_28
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 62
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c722d3d569da5fed0800000000000000
+      internalID: -2380805966674451844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_29
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 47
+        width: 62
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7448a6be6f9c380d0800000000000000
+      internalID: -3421669229522680761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_30
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 44
+        width: 38
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8108de4dec9e9b990800000000000000
+      internalID: -7369602240670236648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_31
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 11
+        width: 58
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e2609b78a4b33c0800000000000000
+      internalID: -4378824265902445002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_32
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 11
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f37e519a5d4a8cc10800000000000000
+      internalID: 2074088865975887679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_33
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 11
+        width: 88
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd74ef9c564e512c0800000000000000
+      internalID: -4461408730008893475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_fondo_34
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 6
+        width: 94
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123fe54da32793870800000000000000
+      internalID: 8663080955220521761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba9664535cfaa9d419239613fcbc35ea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Assets_fondo_0: 7716975173187922440
+      Assets_fondo_1: 3046853121816372015
+      Assets_fondo_10: -9156197263911337219
+      Assets_fondo_11: 2328333986334722140
+      Assets_fondo_12: 8918975695018680789
+      Assets_fondo_13: 7223750677022458586
+      Assets_fondo_14: 6665952755750290807
+      Assets_fondo_15: 8026057986931579282
+      Assets_fondo_16: 8063653529641876832
+      Assets_fondo_17: -1741138899254904220
+      Assets_fondo_18: -7104306308959721874
+      Assets_fondo_19: -8240005536453102630
+      Assets_fondo_2: -1182653945356305315
+      Assets_fondo_20: 5676712969844839904
+      Assets_fondo_21: 3987146242627112146
+      Assets_fondo_22: 6882955710226672995
+      Assets_fondo_23: 6451537254211856574
+      Assets_fondo_24: -6420886368251453704
+      Assets_fondo_25: 2266561365273193772
+      Assets_fondo_26: 3718710763212027687
+      Assets_fondo_27: -8969054643725480304
+      Assets_fondo_28: -2380805966674451844
+      Assets_fondo_29: -3421669229522680761
+      Assets_fondo_3: -171421196093328079
+      Assets_fondo_30: -7369602240670236648
+      Assets_fondo_31: -4378824265902445002
+      Assets_fondo_32: 2074088865975887679
+      Assets_fondo_33: -4461408730008893475
+      Assets_fondo_34: 8663080955220521761
+      Assets_fondo_4: -4547716618362472083
+      Assets_fondo_5: -3864311753198176811
+      Assets_fondo_6: 5546896298197371747
+      Assets_fondo_7: 8597119254529754705
+      Assets_fondo_8: -8336997319081295688
+      Assets_fondo_9: 8295801517485929003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

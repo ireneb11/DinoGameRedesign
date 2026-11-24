@@ -40,15 +40,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
-        spawner = FindObjectOfType<Spawner>();
+        player = FindFirstObjectByType<Player>();
+        spawner = FindFirstObjectByType<Spawner>();
 
         NewGame();
     }
 
     public void NewGame()
     {
-        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
+        //Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
+        Obstacle[] obstacles = FindObjectsByType<Obstacle>(FindObjectsSortMode.None);
 
         foreach (var obstacle in obstacles) {
             Destroy(obstacle.gameObject);

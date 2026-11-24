@@ -1,28 +1,30 @@
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    [Header("ZONA 1 - Primeros 3 minutos")]
-    public GameObject[] firstZonePrefabs;
+    [Header("ZONA 1 ")]
+    public GameObject windowPrefab;
+    public GameObject hallway1Prefab;
+    public GameObject hallway2Prefab;
+    public GameObject columnZone1Prefab;
 
-    [Header("ZONA 2 - Despues de 3 minutos")]
-    public GameObject[] secondZonePrefabs;
-
-    [Header("Columna")]
-    public GameObject columnPrefab;
+    [Header("ZONA 2 ")]
+    public GameObject laboratoryPrefab;
+    public GameObject hallway3Prefab;
+    public GameObject hallway4Prefab;
+    public GameObject columnZone2Prefab;
 
     [Header("Dimensiones")]
     public float backgroundWidth = 14.22f;
-    public float columnWidth = 1.47f;
+    public float columnWidth = 1.2f;
 
     [Header("Movimiento")]
     public float scrollSpeed = 5f;
     public float yPosition = 0f;
 
-    [Header("Duracion de la primera zona")]
-    public float zoneDuration = 180f;
+    [Header("Duracion Zona 1 (segundos)")]
+    public float zoneDuration = 240f;
 
     private float elapsedTime = 0f;
 
@@ -49,11 +51,14 @@ public class BackgroundManager : MonoBehaviour
             return;
         }
 
-        if (columnPrefab == null ||
-            firstZonePrefabs == null ||
-            secondZonePrefabs == null ||
-            firstZonePrefabs.Length < 2 ||
-            secondZonePrefabs.Length < 2)
+        if (windowPrefab == null ||
+            hallway1Prefab == null ||
+            hallway2Prefab == null ||
+            laboratoryPrefab == null ||
+            hallway3Prefab == null ||
+            hallway4Prefab == null ||
+            columnZone1Prefab == null ||
+            columnZone2Prefab == null)
         {
             Debug.LogError("Revisa los prefabs del BackgroundManager.");
             enabled = false;
@@ -118,22 +123,47 @@ public class BackgroundManager : MonoBehaviour
     void SpawnBackground(float x)
     {
         GameObject backgroundPrefab;
+        GameObject columnPrefab;
 
         if (elapsedTime < zoneDuration)
         {
-            backgroundPrefab =
-                firstZonePrefabs[
-                    firstZoneIndex % firstZonePrefabs.Length
-                ];
+            // ZONA 1
+
+            if (firstZoneIndex == 0)
+            {
+                backgroundPrefab = windowPrefab;
+            }
+            else if (firstZoneIndex == 1)
+            {
+                backgroundPrefab = hallway1Prefab;
+            }
+            else
+            {
+                backgroundPrefab = hallway2Prefab;
+            }
+
+            columnPrefab = columnZone1Prefab;
 
             firstZoneIndex++;
         }
         else
         {
-            backgroundPrefab =
-                secondZonePrefabs[
-                    secondZoneIndex % secondZonePrefabs.Length
-                ];
+            // ZONA 2
+
+            if (secondZoneIndex == 0)
+            {
+                backgroundPrefab = laboratoryPrefab;
+            }
+            else if (secondZoneIndex == 1)
+            {
+                backgroundPrefab = hallway3Prefab;
+            }
+            else
+            {
+                backgroundPrefab = hallway4Prefab;
+            }
+
+            columnPrefab = columnZone2Prefab;
 
             secondZoneIndex++;
         }
