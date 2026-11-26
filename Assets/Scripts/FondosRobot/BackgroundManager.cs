@@ -27,6 +27,7 @@ public class BackgroundManager : MonoBehaviour
     public float zoneDuration = 240f;
 
     private float elapsedTime = 0f;
+    public bool IsSecondZone => elapsedTime >= zoneDuration;
 
     private int firstZoneIndex = 0;
     private int secondZoneIndex = 0;

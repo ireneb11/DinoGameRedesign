@@ -1072,6 +1072,36 @@ MonoBehaviour:
   - 1.5111
   - 1.6
   tileY: -2.549253
+  decorationRow1:
+    zone1Prefabs:
+    - {fileID: 5668374090483493297, guid: c6e769c36108be74f84f21e1d347588b, type: 3}
+    - {fileID: 7099063607991004901, guid: 127e7f2c3575dca47869b99ef98ed2b9, type: 3}
+    zone1Widths:
+    - 4.17
+    - 4.17
+    zone2Prefabs:
+    - {fileID: 5668374090483493297, guid: c6e769c36108be74f84f21e1d347588b, type: 3}
+    - {fileID: 7099063607991004901, guid: 127e7f2c3575dca47869b99ef98ed2b9, type: 3}
+    zone2Widths:
+    - 4.17
+    - 4.17
+    yPosition: 0
+    gap: 1
+  decorationRow2:
+    zone1Prefabs:
+    - {fileID: 0}
+    - {fileID: 0}
+    zone1Widths:
+    - 0
+    - 0
+    zone2Prefabs:
+    - {fileID: 0}
+    - {fileID: 0}
+    zone2Widths:
+    - 0
+    - 0
+    yPosition: 0
+    gap: 1
   scrollSpeed: 5
 --- !u!4 &1404162885
 Transform:
