@@ -758,12 +758,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundManager
   windowPrefab: {fileID: 3670351915198018383, guid: d7b121fa81060c043aefe94a99700cca, type: 3}
   hallway1Prefab: {fileID: 2948597566234361622, guid: 34ce05f62c0e1d0449a7f98fc314ebed, type: 3}
-  hallway2Prefab: {fileID: 1993930329196041681, guid: 19f4ddd43d49732488a8db843c09d95b, type: 3}
-  columnZone1Prefab: {fileID: 479317500682356507, guid: 931ef987b0e647848ae1e46c351b6240, type: 3}
+  hallway2Prefab: {fileID: 4399625656825647569, guid: 75fd5227b9e4ca542a82ffcac552949a, type: 3}
+  columnZone1Prefab: {fileID: 4957335838912323273, guid: 5dd277870b03b7142a6b9782c33ab146, type: 3}
   laboratoryPrefab: {fileID: 950883912135960615, guid: b53b703dcd4747c41a3880bea65a7dcd, type: 3}
   hallway3Prefab: {fileID: 9169977747956548194, guid: 80731e3501f63174fb63f975feb1606e, type: 3}
-  hallway4Prefab: {fileID: 1993930329196041681, guid: 19f4ddd43d49732488a8db843c09d95b, type: 3}
-  columnZone2Prefab: {fileID: 8545850886614097550, guid: 0fed259aa6a4c04479e6007c3f2b1f1e, type: 3}
+  hallway4Prefab: {fileID: 6967098880608480755, guid: 28a10334c9431b44790cf5d820457d95, type: 3}
+  columnZone2Prefab: {fileID: 3923957289485264385, guid: a196f2ef9db90f74e9464938303928be, type: 3}
   backgroundWidth: 14.22
   columnWidth: 1.2
   scrollSpeed: 5

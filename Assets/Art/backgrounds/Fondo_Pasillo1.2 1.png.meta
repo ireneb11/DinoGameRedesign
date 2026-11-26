@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56bf99c8a907f3f4ea4ff012acf42ba7
+guid: 9674dda0df779b8428ccba9140b798a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5476529953670362103
-    second: Columna2_0
+      213: 2013513075103519623
+    second: Fondo_Pasillo1.2 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Columna2_0
+      name: Fondo_Pasillo1.2 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
+        width: 320
         height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90c01b5e5057ff3b0800000000000000
-      internalID: -5476529953670362103
+      spriteID: 7835628497f61fb10800000000000000
+      internalID: 2013513075103519623
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Columna2_0: -5476529953670362103
+      Fondo_Pasillo1.2 1_0: 2013513075103519623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
