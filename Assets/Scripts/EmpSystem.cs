@@ -42,6 +42,9 @@ public class EmpSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        // Al revivir tras la salvación se conserva la barra
+        if (GameManager.Instance != null && GameManager.Instance.IsReviving) return;
+
         charges = 0;
         RefreshUI();
     }

@@ -19,45 +19,64 @@ public class GameManager : MonoBehaviour
     private Player player;
     private Spawner spawner;
 
+    // ---- AÑADIDO: salvación ----
+    private RescueMinigame rescue;
+    private float speedBeforeDeath;
+    private bool rescueUsed;
+    public bool IsRescuing { get; private set; }
+    public bool IsReviving { get; private set; }
+    // ----------------------------
+
     private float score;
     public float Score => score;
 
     private void Awake()
     {
-        if (Instance != null) {
+        if (Instance != null)
+        {
             DestroyImmediate(gameObject);
-        } else {
+        }
+        else
+        {
             Instance = this;
         }
     }
 
     private void OnDestroy()
     {
-        if (Instance == this) {
+        if (Instance == this)
+        {
             Instance = null;
         }
     }
 
     private void Start()
     {
-        player = FindFirstObjectByType<Player>();
-        spawner = FindFirstObjectByType<Spawner>();
+        player = FindObjectOfType<Player>();
+        spawner = FindObjectOfType<Spawner>();
+
+        // AÑADIDO: si no hay RescueMinigame en la escena, el juego funciona como el original
+        rescue = FindObjectOfType<RescueMinigame>();
 
         NewGame();
     }
 
     public void NewGame()
     {
-        //Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
-        Obstacle[] obstacles = FindObjectsByType<Obstacle>(FindObjectsSortMode.None);
+        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
 
-        foreach (var obstacle in obstacles) {
+        foreach (var obstacle in obstacles)
+        {
             Destroy(obstacle.gameObject);
         }
 
         score = 0f;
         gameSpeed = initialGameSpeed;
         enabled = true;
+
+        // AÑADIDO
+        rescueUsed = false;
+        IsRescuing = false;
 
         player.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
@@ -67,7 +86,23 @@ public class GameManager : MonoBehaviour
         UpdateHiscore();
     }
 
+    // MODIFICADO: ahora decide si hay salvación o game over definitivo
     public void GameOver()
+    {
+        if (IsRescuing) return; // ya estamos en la salvación (por si hay dos choques en el mismo frame)
+
+        if (rescue != null && !rescueUsed)
+        {
+            rescueUsed = true; // una salvación por partida
+            StartRescue();
+            return;
+        }
+
+        FinalGameOver();
+    }
+
+    // Este es el GameOver() original, sin cambios
+    private void FinalGameOver()
     {
         gameSpeed = 0f;
         enabled = false;
@@ -79,6 +114,56 @@ public class GameManager : MonoBehaviour
 
         UpdateHiscore();
     }
+
+    // ---- AÑADIDO ----
+    private void StartRescue()
+    {
+        IsRescuing = true;
+        speedBeforeDeath = gameSpeed;
+
+        // Limpiamos obstáculos: al revivir no habrá nada encima del dino, y evitamos que
+        // AnimatedSprite divida entre gameSpeed = 0 en los pájaros que estén vivos.
+        foreach (Obstacle obstacle in FindObjectsOfType<Obstacle>())
+        {
+            Destroy(obstacle.gameObject);
+        }
+
+        gameSpeed = 0f;   // congela suelo y animaciones
+        enabled = false;  // congela puntuación y subida de velocidad
+
+        player.gameObject.SetActive(false);
+        spawner.gameObject.SetActive(false);
+
+        rescue.Begin(OnRescueFinished);
+    }
+
+    private void OnRescueFinished(bool success)
+    {
+        IsRescuing = false;
+
+        if (success)
+        {
+            Revive();
+        }
+        else
+        {
+            FinalGameOver();
+        }
+    }
+
+    private void Revive()
+    {
+        gameSpeed = speedBeforeDeath; // antes de activar al jugador (AnimatedSprite divide entre gameSpeed)
+        enabled = true;
+
+        IsReviving = true;
+        player.gameObject.SetActive(true);
+        IsReviving = false;
+
+        // El spawner arranca con su retraso aleatorio, así que hay margen antes del siguiente obstáculo
+        spawner.gameObject.SetActive(true);
+    }
+    // -----------------
 
     private void Update()
     {
