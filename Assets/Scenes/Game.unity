@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 148270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: -4.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -344,7 +344,7 @@ MonoBehaviour:
   marker: {fileID: 225576893}
   itemPrefab: {fileID: 5441592974192457868, guid: 07f2a9921552e9a4898048c6dd5d99d5, type: 3}
   hazardPrefab: {fileID: 1032059456119468145, guid: 82090f13815fcdc4eafcd3711536d329, type: 3}
-  enableDebugWinKey: 0
+  enableDebugWinKey: 1
   debugWinKey: 114
 --- !u!4 &127947881
 Transform:
