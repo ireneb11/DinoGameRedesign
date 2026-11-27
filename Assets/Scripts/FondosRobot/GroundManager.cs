@@ -69,9 +69,6 @@ public class GroundManager : MonoBehaviour
     public float lightWidth = 1f;
     public float lightY = 2f;
 
-    [Header("MOVIMIENTO")]
-    public float scrollSpeed = 5f;
-
     private List<GroundElement> beams = new List<GroundElement>();
     private List<GroundElement> tiles = new List<GroundElement>();
     private List<GroundElement> lights = new List<GroundElement>();
@@ -437,8 +434,7 @@ public class GroundManager : MonoBehaviour
         {
             GroundElement element = elements[i];
 
-            element.transform.position +=
-                Vector3.left * scrollSpeed * Time.deltaTime;
+            element.transform.position += Vector3.left * GameManager.Instance.gameSpeed * Time.deltaTime;
 
             if (element.transform.position.x +
                 element.width + row.gap < leftEdge)
@@ -484,8 +480,7 @@ public class GroundManager : MonoBehaviour
         {
             GroundElement element = elements[i];
 
-            element.transform.position +=
-                Vector3.left * scrollSpeed * Time.deltaTime;
+            element.transform.position += Vector3.left * GameManager.Instance.gameSpeed * Time.deltaTime;
 
             if (element.transform.position.x +
                 element.width < leftEdge)
@@ -524,7 +519,7 @@ public class GroundManager : MonoBehaviour
 
     void MoveLights(bool secondZone)
     {
-        float movement = scrollSpeed * Time.deltaTime;
+        float movement = GameManager.Instance.gameSpeed * Time.deltaTime;
 
         for (int i = lights.Count - 1; i >= 0; i--)
         {

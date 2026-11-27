@@ -20,7 +20,6 @@ public class BackgroundManager : MonoBehaviour
     public float columnWidth = 1.2f;
 
     [Header("Movimiento")]
-    public float scrollSpeed = 5f;
     public float yPosition = 0f;
 
     [Header("Duracion Zona 1 (segundos)")]
@@ -94,8 +93,7 @@ public class BackgroundManager : MonoBehaviour
         {
             Transform bg = backgrounds[i];
 
-            bg.position +=
-                Vector3.left * scrollSpeed * Time.deltaTime;
+            bg.position += Vector3.left * GameManager.Instance.gameSpeed * Time.deltaTime;
 
             if (bg.position.x + segmentWidth < leftEdge)
             {
