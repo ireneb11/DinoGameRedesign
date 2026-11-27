@@ -2,68 +2,65 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-// Ponlo en un GameObject vacío y ACTIVO de la escena (NO en el panel, porque el panel
-// se desactiva). GameManager lo encuentra solo con FindObjectOfType.
-//
-// Minijuego: 3 carriles horizontales. Un marcador se mueve entre ellos (↑/↓ o W/S) y los
-// objetos llegan desde la derecha. Recoge itemsRequired antes de que acabe el tiempo.
-// Todo el aspecto se construye por código en Begin() y se destruye en Finish().
+// Ponlo en un GameObject vacío y ACTIVO (NO dentro del panel). GameManager lo encuentra solo.
+// Todo lo visual (carriles, marcador, objetos, obstáculos) son objetos de la escena / prefabs.
 public class RescueMinigame : MonoBehaviour
 {
-    private const int LaneCount = 3;
-
     [Header("Reglas")]
+    [Tooltip("Segundos entre morir y empezar a recoger")]
+    [SerializeField] private float startDelay = 1.5f;
     [SerializeField] private float duration = 8f;
     [SerializeField] private int itemsRequired = 5;
+    [Tooltip("Segundos que se restan al tocar un obstáculo")]
+    [SerializeField] private float hazardTimePenalty = 1.5f;
 
-    [Header("Objetos")]
-    [Tooltip("Segundos que tarda un objeto en cruzar desde el borde derecho hasta el marcador")]
+    [Header("Aparición")]
+    [Tooltip("Segundos que tarda un objeto en cruzar hasta el marcador")]
     [SerializeField] private float itemTravelTime = 1.3f;
     [SerializeField] private float minSpawnInterval = 0.5f;
     [SerializeField] private float maxSpawnInterval = 0.9f;
+    [Tooltip("Probabilidad de trampa: obstáculo justo delante del objeto, en su mismo carril")]
+    [Range(0f, 1f)]
+    [SerializeField] private float trapChance = 0.4f;
+    [Tooltip("Probabilidad de doble trampa: obstáculos en todos los carriles menos uno libre, y el objeto detrás")]
+    [Range(0f, 1f)]
+    [SerializeField] private float doubleTrapChance = 0.3f;
+    [Tooltip("Segundos entre el obstáculo y el objeto de una trampa. Menos = más difícil")]
+    [SerializeField] private float trapGap = 0.35f;
 
-    [Header("UI")]
-    [Tooltip("Raíz de la UI del minijuego. Empieza desactivada y se activa al morir")]
+    [Header("Escena")]
+    [Tooltip("Raíz de la UI del minijuego (empieza desactivada)")]
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI timerText;
-
-    [Header("Aspecto (opcional: sin sprites se usan colores lisos)")]
-    [SerializeField] private Sprite markerSprite;
-    [SerializeField] private Sprite itemSprite;
-    [SerializeField] private Color laneColor = new Color(1f, 1f, 1f, 0.15f);
-    [SerializeField] private Color markerColor = new Color(0.2f, 0.8f, 1f);
-    [SerializeField] private Color itemColor = Color.yellow;
+    [SerializeField] private string readyMessage = "¡Prepárate!";
+    [Tooltip("Los carriles, de abajo a arriba (su posición Y define dónde va cada carril)")]
+    [SerializeField] private RectTransform[] lanes;
+    [Tooltip("El marcador del jugador (su posición X define dónde se recoge)")]
+    [SerializeField] private RectTransform marker;
+    [Tooltip("Prefab UI de lo que hay que recoger")]
+    [SerializeField] private GameObject itemPrefab;
+    [Tooltip("Prefab UI de lo que hay que esquivar (opcional)")]
+    [SerializeField] private GameObject hazardPrefab;
 
     [Header("Depuración")]
-    [Tooltip("Desmárcalo en la versión final")]
     [SerializeField] private bool enableDebugWinKey = true;
     [SerializeField] private KeyCode debugWinKey = KeyCode.R;
 
     private class Item
     {
-        public RectTransform rect;
+        public Transform t;
         public int lane;
+        public bool hazard;
     }
 
-    private Action<bool> onFinished;
-    private float timeLeft;
-    private bool running;
-    private int collected;
-    private int currentLane;
-    private float spawnTimer;
-
-    private RectTransform area;
-    private RectTransform marker;
     private readonly List<Item> items = new List<Item>();
-
-    private float laneSpacing;
-    private float halfWidth;
-    private float markerX;
-    private float spawnX;
-    private float itemSpeed;
-    private float hitRadius;
+    private Action<bool> onFinished;
+    private bool running;
+    private float delayLeft, timeLeft, spawnTimer;
+    private int collected, currentLane, lastLane;
+    private float spawnExtra;
+    private float rightX, leftX, itemSpeed, hitRadius;
 
     private void Awake()
     {
@@ -73,187 +70,175 @@ public class RescueMinigame : MonoBehaviour
     public void Begin(Action<bool> callback)
     {
         onFinished = callback;
+        delayLeft = startDelay;
         timeLeft = duration;
+        spawnTimer = 0f;
         collected = 0;
-        currentLane = 1; // carril central
-        spawnTimer = 0f; // el primer objeto sale enseguida
+        lastLane = -1; spawnExtra = 0f;
+        currentLane = lanes.Length / 2;
         items.Clear();
 
-        if (panel != null) panel.SetActive(true);
+        panel.SetActive(true);
+
+        // Ordena los carriles de abajo a arriba, da igual en qué orden los hayas puesto
+        Array.Sort(lanes, (a, b) => a.position.y.CompareTo(b.position.y));
+
+        // El texto siempre por encima del resto de elementos
+        if (timerText != null)
+        {
+            timerText.gameObject.SetActive(true);
+            timerText.transform.SetAsLastSibling();
+        }
+
         Canvas.ForceUpdateCanvases();
 
-        BuildArea();
+        // Medidas en coordenadas de mundo, así no dependen de anclas ni de la resolución
+        Vector3[] corners = new Vector3[4];
+        panel.GetComponent<RectTransform>().GetWorldCorners(corners);
+        float laneGap = lanes.Length > 1 ? Mathf.Abs(lanes[1].position.y - lanes[0].position.y) : 1f;
+        hitRadius = laneGap * 0.55f;
+        leftX = corners[0].x - hitRadius;
+        rightX = corners[2].x + hitRadius;
+        itemSpeed = (rightX - marker.position.x) / Mathf.Max(0.1f, itemTravelTime);
+
+        MoveMarker();
+        if (timerText != null) timerText.text = readyMessage;
         running = true;
-        RefreshText();
     }
 
     private void Update()
     {
         if (!running) return;
 
-        // Time.deltaTime no depende de gameSpeed, así que funciona con el mundo congelado
+        if (enableDebugWinKey && Input.GetKeyDown(debugWinKey))
+        {
+            Finish(true);
+            return;
+        }
+
+        if (delayLeft > 0f)
+        {
+            delayLeft -= Time.deltaTime;
+            return;
+        }
+
         timeLeft -= Time.deltaTime;
 
-        HandleInput();
-        UpdateItems();
-        RefreshText();
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) currentLane = Mathf.Min(currentLane + 1, lanes.Length - 1);
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) currentLane = Mathf.Max(currentLane - 1, 0);
+        MoveMarker();
 
-        if (collected >= itemsRequired)
+        UpdateItems();
+
+        if (timerText != null)
         {
-            Finish(true);
+            timerText.text = $"Objetos {collected}/{itemsRequired}   {Mathf.Max(0f, timeLeft):F1}s";
         }
-        else if (enableDebugWinKey && Input.GetKeyDown(debugWinKey))
-        {
-            Finish(true);
-        }
-        else if (timeLeft <= 0f)
-        {
-            Finish(false);
-        }
+
+        if (collected >= itemsRequired) Finish(true);
+        else if (timeLeft <= 0f) Finish(false);
     }
 
-    private void HandleInput()
+    private void MoveMarker()
     {
-        bool up = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
-        bool down = Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S);
-
-        if (up) currentLane = Mathf.Min(currentLane + 1, LaneCount - 1);
-        if (down) currentLane = Mathf.Max(currentLane - 1, 0);
-
-        marker.anchoredPosition = new Vector2(markerX, LaneY(currentLane));
+        marker.position = new Vector3(marker.position.x, lanes[currentLane].position.y, marker.position.z);
     }
 
     private void UpdateItems()
     {
         spawnTimer -= Time.deltaTime;
-
         if (spawnTimer <= 0f)
         {
-            SpawnItem();
-            spawnTimer = UnityEngine.Random.Range(minSpawnInterval, maxSpawnInterval);
+            Spawn();
+            spawnTimer = UnityEngine.Random.Range(minSpawnInterval, maxSpawnInterval) + spawnExtra;
         }
 
         for (int i = items.Count - 1; i >= 0; i--)
         {
             Item item = items[i];
+            Vector3 p = item.t.position;
+            p.x -= itemSpeed * Time.deltaTime;
+            item.t.position = p;
 
-            Vector2 pos = item.rect.anchoredPosition;
-            pos.x -= itemSpeed * Time.deltaTime;
-            item.rect.anchoredPosition = pos;
-
-            if (item.lane == currentLane && Mathf.Abs(pos.x - markerX) <= hitRadius)
+            if (item.lane == currentLane && Mathf.Abs(p.x - marker.position.x) <= hitRadius)
             {
-                // Recogido
-                collected++;
-                Destroy(item.rect.gameObject);
+                if (item.hazard) timeLeft -= hazardTimePenalty;
+                else collected++;
+
+                Destroy(item.t.gameObject);
                 items.RemoveAt(i);
             }
-            else if (pos.x < -halfWidth - 50f)
+            else if (p.x < leftX)
             {
-                // Se ha escapado por la izquierda
-                Destroy(item.rect.gameObject);
+                Destroy(item.t.gameObject);
                 items.RemoveAt(i);
             }
         }
     }
 
-    private void SpawnItem()
+    // Reglas (no es azar puro): el objeto siempre sale en un carril distinto al anterior y
+    // las trampas siempre dejan un carril libre, así que todo es superable.
+    private void Spawn()
     {
-        int lane = UnityEngine.Random.Range(0, LaneCount);
+        int lane;
+        do
+        {
+            lane = UnityEngine.Random.Range(0, lanes.Length);
+        } while (lanes.Length > 1 && lane == lastLane);
+        lastLane = lane;
 
-        Image image = CreateImage("Item", area, Vector2.one * laneSpacing * 0.45f, itemColor, itemSprite);
-        image.rectTransform.anchoredPosition = new Vector2(spawnX, LaneY(lane));
+        float roll = UnityEngine.Random.value;
+        bool canTrap = hazardPrefab != null;
+        spawnExtra = 0f;
 
-        items.Add(new Item { rect = image.rectTransform, lane = lane });
+        if (canTrap && lanes.Length > 2 && roll < doubleTrapChance)
+        {
+            // Doble trampa: obstáculos en todos los carriles menos uno libre (distinto al del objeto)
+            int safe;
+            do
+            {
+                safe = UnityEngine.Random.Range(0, lanes.Length);
+            } while (safe == lane);
+
+            for (int i = 0; i < lanes.Length; i++)
+            {
+                if (i != safe) CreateAt(hazardPrefab, i, rightX, true);
+            }
+            CreateAt(itemPrefab, lane, rightX + itemSpeed * trapGap, false);
+            spawnExtra = trapGap; // margen para poder reaccionar al siguiente
+        }
+        else if (canTrap && roll < doubleTrapChance + trapChance)
+        {
+            CreateAt(hazardPrefab, lane, rightX, true);
+            CreateAt(itemPrefab, lane, rightX + itemSpeed * trapGap, false);
+            spawnExtra = trapGap;
+        }
+        else
+        {
+            CreateAt(itemPrefab, lane, rightX, false);
+        }
     }
 
-    // Aquí termina el minijuego (también se puede llamar desde fuera)
+    private void CreateAt(GameObject prefab, int lane, float x, bool hazard)
+    {
+        GameObject go = Instantiate(prefab, marker.parent);
+        go.transform.position = new Vector3(x, lanes[lane].position.y, marker.position.z);
+        items.Add(new Item { t = go.transform, lane = lane, hazard = hazard });
+    }
+
     public void Finish(bool success)
     {
         if (!running) return;
         running = false;
 
-        if (area != null)
-        {
-            Destroy(area.gameObject); // se lleva consigo carriles, marcador y objetos
-            area = null;
-        }
+        foreach (Item item in items) Destroy(item.t.gameObject);
         items.Clear();
 
-        if (panel != null) panel.SetActive(false);
+        panel.SetActive(false);
 
         Action<bool> callback = onFinished;
         onFinished = null;
         callback?.Invoke(success);
-    }
-
-    private void BuildArea()
-    {
-        RectTransform panelRect = panel.GetComponent<RectTransform>();
-        float width = panelRect.rect.width > 0f ? panelRect.rect.width : 800f;
-        float height = panelRect.rect.height > 0f ? panelRect.rect.height : 450f;
-
-        laneSpacing = Mathf.Min(120f, height / 5f);
-        halfWidth = width * 0.5f;
-        markerX = -width * 0.3f;
-        spawnX = halfWidth + 50f;
-        itemSpeed = (spawnX - markerX) / Mathf.Max(0.1f, itemTravelTime);
-        hitRadius = laneSpacing * 0.55f;
-
-        GameObject areaObject = new GameObject("RescueArea", typeof(RectTransform));
-        area = areaObject.GetComponent<RectTransform>();
-        area.SetParent(panel.transform, false);
-        area.anchorMin = area.anchorMax = area.pivot = new Vector2(0.5f, 0.5f);
-        area.anchoredPosition = Vector2.zero;
-        area.sizeDelta = new Vector2(width, laneSpacing * LaneCount);
-        area.SetAsFirstSibling(); // así el texto del temporizador queda por encima
-
-        for (int i = 0; i < LaneCount; i++)
-        {
-            Image lane = CreateImage("Lane" + i, area, new Vector2(width, laneSpacing - 8f), laneColor, null);
-            lane.rectTransform.anchoredPosition = new Vector2(0f, LaneY(i));
-        }
-
-        Image markerImage = CreateImage("Marker", area, Vector2.one * laneSpacing * 0.6f, markerColor, markerSprite);
-        marker = markerImage.rectTransform;
-        marker.anchoredPosition = new Vector2(markerX, LaneY(currentLane));
-    }
-
-    // Carril 0 abajo, 1 en el centro, 2 arriba
-    private float LaneY(int lane)
-    {
-        return (lane - 1) * laneSpacing;
-    }
-
-    private Image CreateImage(string objectName, Transform parent, Vector2 size, Color color, Sprite sprite)
-    {
-        GameObject go = new GameObject(objectName, typeof(RectTransform), typeof(Image));
-
-        RectTransform rect = go.GetComponent<RectTransform>();
-        rect.SetParent(parent, false);
-        rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
-        rect.sizeDelta = size;
-
-        Image image = go.GetComponent<Image>();
-        image.raycastTarget = false;
-        image.color = color;
-
-        if (sprite != null)
-        {
-            image.sprite = sprite;
-            image.preserveAspect = true;
-            image.color = Color.white;
-        }
-
-        return image;
-    }
-
-    private void RefreshText()
-    {
-        if (timerText != null)
-        {
-            timerText.text = $"Objetos {collected}/{itemsRequired}   {Mathf.Max(0f, timeLeft):F1}s";
-        }
     }
 
 }
