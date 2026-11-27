@@ -54,11 +54,27 @@ public class GroundManager : MonoBehaviour
     [Header("DECORACION FILA 2")]
     public DecorationRow decorationRow2 = new DecorationRow();
 
+    [Header("LUCES - ZONA 1")]
+    public GameObject blueLightPrefab;
+    public GameObject orangeLightPrefab;
+
+    [Header("LUCES - ZONA 2")]
+    public GameObject greenLightPrefab;
+    public GameObject pinkLightPrefab;
+
+    [Header("GENERACION DE LUCES")]
+    public float lightSpacing = 5f;
+    [Range(0f, 1f)]
+    public float lightSpawnChance = 0.6f;
+    public float lightWidth = 1f;
+    public float lightY = 2f;
+
     [Header("MOVIMIENTO")]
     public float scrollSpeed = 5f;
 
     private List<GroundElement> beams = new List<GroundElement>();
     private List<GroundElement> tiles = new List<GroundElement>();
+    private List<GroundElement> lights = new List<GroundElement>();
 
     // Pool compartido para todos los objetos
     private Dictionary<GameObject, Stack<GameObject>> objectPools =
@@ -72,6 +88,7 @@ public class GroundManager : MonoBehaviour
     private float leftEdge;
     private float rightEdge;
     private float maxTileWidth;
+    private float nextLightX;
 
     private bool previousZone = false;
 
@@ -152,6 +169,15 @@ public class GroundManager : MonoBehaviour
 
         if (decorationRow2.configured)
             InitializeDecorationRow(decorationRow2);
+
+        // GENERAR POSIBLES LUCES INICIALES
+        nextLightX = leftEdge;
+
+        while (nextLightX < rightEdge + lightSpacing)
+        {
+            SpawnLightSlot(nextLightX, previousZone);
+            nextLightX += lightSpacing;
+        }
     }
 
     void Update()
@@ -175,6 +201,8 @@ public class GroundManager : MonoBehaviour
 
         if (decorationRow2.configured)
             MoveDecorationRow(decorationRow2, currentZone);
+
+        MoveLights(currentZone);
     }
 
     // ---------------- OBJECT POOLING ----------------
@@ -491,4 +519,76 @@ public class GroundManager : MonoBehaviour
             }
         }
     }
+
+    // ---------------- LUCES ----------------
+
+    void MoveLights(bool secondZone)
+    {
+        float movement = scrollSpeed * Time.deltaTime;
+
+        for (int i = lights.Count - 1; i >= 0; i--)
+        {
+            GroundElement light = lights[i];
+
+            light.transform.position += Vector3.left * movement;
+
+            if (light.transform.position.x + light.width < leftEdge)
+            {
+                ReturnToPool(light);
+                lights.RemoveAt(i);
+            }
+        }
+
+        // AVANZAR EL SIGUIENTE ESPACIO POSIBLE
+        nextLightX -= movement;
+
+        while (nextLightX < rightEdge + lightSpacing)
+        {
+            SpawnLightSlot(nextLightX, secondZone);
+            nextLightX += lightSpacing;
+        }
+    }
+
+    void SpawnLightSlot(float x, bool secondZone)
+    {
+        // PROBABILIDAD DE QUE NO APAREZCA NINGUNA LUZ
+        if (UnityEngine.Random.value > lightSpawnChance)
+            return;
+
+        GameObject prefab1 = secondZone
+            ? greenLightPrefab
+            : blueLightPrefab;
+
+        GameObject prefab2 = secondZone
+            ? pinkLightPrefab
+            : orangeLightPrefab;
+
+        // SI NO HAY PREFABS ASIGNADOS, NO GENERAR
+        if (prefab1 == null && prefab2 == null)
+            return;
+
+        GameObject selectedPrefab;
+
+        if (prefab1 == null)
+            selectedPrefab = prefab2;
+        else if (prefab2 == null)
+            selectedPrefab = prefab1;
+        else
+            selectedPrefab = UnityEngine.Random.value < 0.5f
+                ? prefab1
+                : prefab2;
+
+        GameObject newLight = GetPooledObject(
+            selectedPrefab,
+            new Vector3(x, lightY, 0)
+        );
+
+        lights.Add(new GroundElement
+        {
+            transform = newLight.transform,
+            width = lightWidth,
+            prefab = selectedPrefab
+        });
+    }
+
 }
