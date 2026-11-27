@@ -239,9 +239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0a4a3e568691d40b504518f44a9e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 9138bd4196615a14a840d76bdc47f64b, type: 3}
-  - {fileID: 21300000, guid: 9dd7d801937e5a742a96b945cfa468ac, type: 3}
+  runSprites: []
+  jumpSprite: {fileID: 0}
+  deadSprites: []
+  runAnimationSpeed: 12
+  deadAnimationSpeed: 8
 --- !u!143 &148278
 CharacterController:
   m_ObjectHideFlags: 0
@@ -758,12 +760,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundManager
   windowPrefab: {fileID: 3670351915198018383, guid: d7b121fa81060c043aefe94a99700cca, type: 3}
   hallway1Prefab: {fileID: 2948597566234361622, guid: 34ce05f62c0e1d0449a7f98fc314ebed, type: 3}
-  hallway2Prefab: {fileID: 1993930329196041681, guid: 19f4ddd43d49732488a8db843c09d95b, type: 3}
-  columnZone1Prefab: {fileID: 479317500682356507, guid: 931ef987b0e647848ae1e46c351b6240, type: 3}
+  hallway2Prefab: {fileID: 4399625656825647569, guid: 75fd5227b9e4ca542a82ffcac552949a, type: 3}
+  columnZone1Prefab: {fileID: 4957335838912323273, guid: 5dd277870b03b7142a6b9782c33ab146, type: 3}
   laboratoryPrefab: {fileID: 950883912135960615, guid: b53b703dcd4747c41a3880bea65a7dcd, type: 3}
   hallway3Prefab: {fileID: 9169977747956548194, guid: 80731e3501f63174fb63f975feb1606e, type: 3}
-  hallway4Prefab: {fileID: 1993930329196041681, guid: 19f4ddd43d49732488a8db843c09d95b, type: 3}
-  columnZone2Prefab: {fileID: 8545850886614097550, guid: 0fed259aa6a4c04479e6007c3f2b1f1e, type: 3}
+  hallway4Prefab: {fileID: 6967098880608480755, guid: 28a10334c9431b44790cf5d820457d95, type: 3}
+  columnZone2Prefab: {fileID: 3923957289485264385, guid: a196f2ef9db90f74e9464938303928be, type: 3}
   backgroundWidth: 14.22
   columnWidth: 1.2
   scrollSpeed: 5
@@ -1075,33 +1077,41 @@ MonoBehaviour:
   decorationRow1:
     zone1Prefabs:
     - {fileID: 5668374090483493297, guid: c6e769c36108be74f84f21e1d347588b, type: 3}
-    - {fileID: 7099063607991004901, guid: 127e7f2c3575dca47869b99ef98ed2b9, type: 3}
+    - {fileID: 1608012864249443823, guid: 6a426aeb34758064c82e39fd69f6db80, type: 3}
     zone1Widths:
     - 4.17
-    - 4.17
+    - 6
     zone2Prefabs:
     - {fileID: 5668374090483493297, guid: c6e769c36108be74f84f21e1d347588b, type: 3}
-    - {fileID: 7099063607991004901, guid: 127e7f2c3575dca47869b99ef98ed2b9, type: 3}
+    - {fileID: 1608012864249443823, guid: 6a426aeb34758064c82e39fd69f6db80, type: 3}
     zone2Widths:
     - 4.17
     - 4.17
-    yPosition: 0
-    gap: 1
+    yPosition: -3.99
+    gap: 0.5
   decorationRow2:
     zone1Prefabs:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 9084166345919063502, guid: ce769bd6998ac2941878605366c8af83, type: 3}
+    - {fileID: 1096475297783484688, guid: f1269f22d67e7824c891f57bdae76408, type: 3}
     zone1Widths:
-    - 0
-    - 0
+    - 4.17
+    - 4
     zone2Prefabs:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 9084166345919063502, guid: ce769bd6998ac2941878605366c8af83, type: 3}
+    - {fileID: 4748917102363236398, guid: e731cfb57cc1bf74a9e4c4598d9975dc, type: 3}
     zone2Widths:
-    - 0
-    - 0
-    yPosition: 0
+    - 4
+    - 4
+    yPosition: -2.56
     gap: 1
+  blueLightPrefab: {fileID: 1685405733564298080, guid: d52f27aa8d0f59b44bf00313e12821dc, type: 3}
+  orangeLightPrefab: {fileID: 5420298543342713310, guid: 158ec4a1e00ab514d9299be87481362b, type: 3}
+  greenLightPrefab: {fileID: 4674044813889988407, guid: 2c15b51a3aaf38f44baad7fd93de0a15, type: 3}
+  pinkLightPrefab: {fileID: 8407378657918311460, guid: 11ede55e35e76de40b3aa00b168f1d25, type: 3}
+  lightSpacing: 5
+  lightSpawnChance: 0.99
+  lightWidth: 1
+  lightY: 3.02
   scrollSpeed: 5
 --- !u!4 &1404162885
 Transform:

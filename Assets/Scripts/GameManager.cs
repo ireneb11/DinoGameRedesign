@@ -52,18 +52,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
-        spawner = FindObjectOfType<Spawner>();
+        player = FindFirstObjectByType<Player>();
+        spawner = FindFirstObjectByType<Spawner>();
 
         // AÑADIDO: si no hay RescueMinigame en la escena, el juego funciona como el original
-        rescue = FindObjectOfType<RescueMinigame>();
+        rescue = FindFirstObjectByType<RescueMinigame>();
 
         NewGame();
     }
 
     public void NewGame()
     {
-        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
+        Obstacle[] obstacles = FindObjectsByType<Obstacle>(FindObjectsSortMode.InstanceID);
 
         foreach (var obstacle in obstacles)
         {
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
 
         // Limpiamos obstáculos: al revivir no habrá nada encima del dino, y evitamos que
         // AnimatedSprite divida entre gameSpeed = 0 en los pájaros que estén vivos.
-        foreach (Obstacle obstacle in FindObjectsOfType<Obstacle>())
+        foreach (Obstacle obstacle in FindObjectsByType<Obstacle>(FindObjectsSortMode.InstanceID))
         {
             Destroy(obstacle.gameObject);
         }
