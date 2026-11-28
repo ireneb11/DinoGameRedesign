@@ -228,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 8
   gravity: 19.62
+  animator: {fileID: 0}
+  deathSprite: {fileID: 0}
 --- !u!114 &148277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de26a4e3e4d57c458dc7fc1bb313e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EmpSystem
-  nearMissDistance: 0.4
-  nearMissesToCharge: 5
+  nearMissDistance: 0.25
+  nearMissesToCharge: 8
   activationKey: 101
   fillImage: {fileID: 1098115295}
   normalColor: {r: 0.2, g: 0.8, b: 1, a: 1}
@@ -325,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescueMinigame
   startDelay: 1
-  duration: 10
+  duration: 12
   itemsRequired: 10
   hazardTimePenalty: 2
   itemTravelTime: 0.7
@@ -2150,6 +2152,7 @@ MonoBehaviour:
   hiscoreText: {fileID: 151625051}
   gameOverText: {fileID: 1081033933}
   retryButton: {fileID: 1417875464}
+  deathAnimationTime: 1
 --- !u!4 &1501353567
 Transform:
   m_ObjectHideFlags: 0

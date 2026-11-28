@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private Button retryButton;
+    [Tooltip("Segundos de animación de muerte antes de la pantalla de salvación")]
+    [SerializeField] private float deathAnimationTime = 1f;
 
     private Player player;
     private Spawner spawner;
@@ -52,18 +55,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player = FindFirstObjectByType<Player>();
-        spawner = FindFirstObjectByType<Spawner>();
+        player = FindObjectOfType<Player>();
+        spawner = FindObjectOfType<Spawner>();
 
         // AÑADIDO: si no hay RescueMinigame en la escena, el juego funciona como el original
-        rescue = FindFirstObjectByType<RescueMinigame>();
+        rescue = FindObjectOfType<RescueMinigame>();
 
         NewGame();
     }
 
     public void NewGame()
     {
-        Obstacle[] obstacles = FindObjectsByType<Obstacle>(FindObjectsSortMode.InstanceID);
+        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
 
         foreach (var obstacle in obstacles)
         {
@@ -121,19 +124,26 @@ public class GameManager : MonoBehaviour
         IsRescuing = true;
         speedBeforeDeath = gameSpeed;
 
+        gameSpeed = 0f;   // congela suelo y obstáculos
+        enabled = false;  // congela puntuación y subida de velocidad
+        spawner.gameObject.SetActive(false);
+
+        player.Die();     // animación de muerte (el jugador sigue visible)
+        StartCoroutine(RescueAfterDeath());
+    }
+
+    private IEnumerator RescueAfterDeath()
+    {
+        yield return new WaitForSeconds(deathAnimationTime);
+
         // Limpiamos obstáculos: al revivir no habrá nada encima del dino, y evitamos que
         // AnimatedSprite divida entre gameSpeed = 0 en los pájaros que estén vivos.
-        foreach (Obstacle obstacle in FindObjectsByType<Obstacle>(FindObjectsSortMode.InstanceID))
+        foreach (Obstacle obstacle in FindObjectsOfType<Obstacle>())
         {
             Destroy(obstacle.gameObject);
         }
 
-        gameSpeed = 0f;   // congela suelo y animaciones
-        enabled = false;  // congela puntuación y subida de velocidad
-
         player.gameObject.SetActive(false);
-        spawner.gameObject.SetActive(false);
-
         rescue.Begin(OnRescueFinished);
     }
 

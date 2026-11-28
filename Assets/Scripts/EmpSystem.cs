@@ -10,7 +10,7 @@ public class EmpSystem : MonoBehaviour
 {
     [Header("Casi-choque")]
     [Tooltip("Distancia máxima (en unidades de mundo) entre dino y obstáculo para contar como casi-choque")]
-    [SerializeField] private float nearMissDistance = 0.4f;
+    [SerializeField] private float nearMissDistance = 0.3f;
 
     [Tooltip("Casi-choques necesarios para llenar la barra (5 = cada uno es 1/5)")]
     [SerializeField] private int nearMissesToCharge = 5;
@@ -51,6 +51,8 @@ public class EmpSystem : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsRescuing) return; // animación de muerte / salvación
+
         TrackNearMisses();
 
         if (IsReady && Input.GetKeyDown(activationKey))
@@ -61,6 +63,7 @@ public class EmpSystem : MonoBehaviour
 
     private void TrackNearMisses()
     {
+        Physics.SyncTransforms(); // sin esto, los bounds de los obstáculos van con retraso
         Bounds playerBounds = playerCollider.bounds;
 
         foreach (Obstacle obstacle in Obstacle.Active)
@@ -78,8 +81,9 @@ public class EmpSystem : MonoBehaviour
             {
                 obstacle.nearMissResolved = true;
 
-                // > 0 descarta solapamientos reales (choques)
-                bool isNearMiss = obstacle.closestDistance > 0.001f && obstacle.closestDistance <= nearMissDistance;
+                // Si hubiera habido choque real, el jugador estaría muerto: un solapamiento de bounds
+                // sin muerte (esquina redondeada, aterrizar justo detrás...) también es casi-choque
+                bool isNearMiss = obstacle.closestDistance <= nearMissDistance;
 
                 if (debugLogs)
                 {
